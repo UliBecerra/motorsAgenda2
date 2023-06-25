@@ -9,8 +9,8 @@ const validationMiddleware = require('../middlewares/validations.middleware');
  router.use(userMiddleware.protectToken) 
  router
   .route("/")
-    .get(validationMiddleware.createReapairValidator, repairsController.repairsFind)
-  .post(repairsController.repairCreate);
+    .get( repairsController.repairsFind)
+  .post(validationMiddleware.createReapairValidator, repairsController.repairCreate);
 
 router
   .route("/:id")
